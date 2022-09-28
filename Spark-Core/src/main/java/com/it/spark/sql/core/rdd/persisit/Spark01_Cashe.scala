@@ -48,7 +48,6 @@ object Spark01_Cache {
         rdd51.collect().foreach(println)
 
 
-
         sc.stop()
     }
 
