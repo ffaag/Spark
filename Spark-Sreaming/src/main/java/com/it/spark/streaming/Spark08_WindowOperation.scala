@@ -21,6 +21,9 @@ object Spark08_WindowOperation {
 
         val lines: ReceiverInputDStream[String] = ssc.socketTextStream("localhost", 9999)
 
+
+        val value2: DStream[String] = lines.window(Seconds(6),Seconds(6)) // 默认移动步长是一个采集周期
+
         val value: DStream[(String, Int)] = lines.map((_, 1))
         // 9s的窗口，3s的滑动，明显有6s重复了，第一个函数对新增加的3s进行操作，第二个函数对失去的3个进行操作
         // 这中间的6s就要进行保存，因此要设置缓冲区
