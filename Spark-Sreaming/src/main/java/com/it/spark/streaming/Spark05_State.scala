@@ -9,7 +9,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 /**
  * @author ZuYingFang
  * @time 2022-04-01 18:14
- * @description 自定义数据源来采集
+ * @description
  */
 object Spark05_State {
 

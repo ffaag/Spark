@@ -34,18 +34,17 @@ object Spark04_SQL_UDAF {
      * 自定义聚合函数类：计算年龄的平均值
      * org.apache.spark.sql.expressions.Aggregator
      * IN：输入的数据类型——Long
-     * BUF：缓冲区数据类型——Buff
+     * BUF：缓冲区数据类型——Buff，自定义的样例类
      * OUT：输出的数据类型——Long
      */
 
     case class Buff(var total:Long, var count:Long)
 
 
-
     class MyAvgUDAF extends Aggregator[Long, Buff, Long] {
 
         // 缓冲区初始值
-        override def zero: Buff = Buff(0L, 0L)
+        override def zero: Buff = Buff(0L, 0L)   //
 
         // 根据输入的数据更新缓冲区的数据
         override def reduce(b: Buff, a: Long): Buff = {
