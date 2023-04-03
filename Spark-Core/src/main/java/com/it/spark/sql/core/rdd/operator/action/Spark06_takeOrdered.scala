@@ -18,7 +18,7 @@ object Spark06_takeOrdered {
         // takeOrdered：返回RDD排序后的前几个元素组成的数组(升序)
         val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4))
 
-        val ints: Array[Int] = rdd.take(3)
+        val ints: Array[Int] = rdd.takeOrdered(3)
 
         println(ints.mkString(", "))
 

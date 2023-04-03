@@ -18,7 +18,10 @@ object Spark01_Acc {
 
         // 分区内计算，分区间也要计算
         val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4))
-        val i: Int = rdd.reduce(_ + _)
+        var i: Int = rdd.reduce(_ + _)
+        println(i)
+        rdd.foreach( num => i += num)
+        println(i)
 
         // 这个foreach是每个分区都会执行，所以结果可能不是10
         // 结果是零，是因为sum在driver中，foreach里面执行的语句在executor中，改变的只是executor中的sum，driver中的sum没有变化还是0

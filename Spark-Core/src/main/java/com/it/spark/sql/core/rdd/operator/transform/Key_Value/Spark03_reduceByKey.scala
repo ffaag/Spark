@@ -10,7 +10,6 @@ import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
  */
 object Spark03_reduceByKey {
 
-
     def main(args: Array[String]): Unit = {
         val sparkConf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("operator")
         val sc = new SparkContext(sparkConf)

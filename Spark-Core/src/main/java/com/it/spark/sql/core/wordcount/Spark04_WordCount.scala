@@ -14,8 +14,6 @@ object Spark04_WordCount {
         val sparkConf: SparkConf = new SparkConf().setMaster("local").setAppName("WordCount")
         val sc = new SparkContext(sparkConf)
 
-
-
         sc.stop()
     }
 

@@ -32,7 +32,7 @@ object Spark01_WordCount {
             }
         }
 
-        // 5 将转换结果采集到控制台打印出来
+        // 5 将转换结果采集到控制台打印出来，执行算子，生成task，得到真正的数据
         val array: Array[(String, Int)] = wordToCount.collect()
         array.foreach(println)
 
